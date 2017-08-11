@@ -1,6 +1,6 @@
 # Test file for classes
 
-class musician(object):
+class Musician(object):
     def __init__(self, sounds):
         self.sounds = sounds
         
@@ -8,10 +8,20 @@ class musician(object):
         for i in range(length):
             print(self.sounds[i % len(self.sounds)], end=" ")
         print()
-        
-class guitarist(object):
+
+class Bassist(object):
+    """docstring for Bassist"""
+    def __init__(self,):
+        self.sounds = ["Twang", "Thrumb", "Bling"]
+
+    def solo(self, length):
+        for i in range(length):
+            print(self.sounds[i % len(self.sounds)], end=" ")
+        print()
+
+class Guitarist(object):
     def __init__(self):
-        self.sounds = ['boink', 'bow', 'boom']
+        self.sounds = ['Boink', 'Bow', 'Boom']
         
     def solo(self, lenght):
         for i in range(length):
