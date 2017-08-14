@@ -34,17 +34,53 @@ class Drummer(Musician):
 		# call the __init__ method of the parent
 		super().__init__(["Boom", "Baac", "Bang"])
 
-	def Counttofour(self):
+	def counttofour(self):
 		for i in range(1, 5):
 			print(i, end=" ")
 		print()
 
-	def Combust(self):
+	def combust(self):
 		print(random.choice(self.sounds)*3)
 
 
+class Band(object):
+	"""docstring for Band"""
+	band_members = []
+
+	def __init__(self):
+		# self.name = name
+		# call the __init__ method of the parent
+		Drummer()
+
+	def hire(self):
+		member = Drummer
+
+		Band.band_members.append(member)
+		print(self.band_members)
+
+
+	# def fire(self):
+	# 	Band.band_members.pop(Musician)
+	# 	print(Band.band_members)
+		
+
+
+	# def bandplay(self):
+	# 	Drummer.counttofour()
+	# 	Drummer.solo()
+	# 	Bassist.solo()
+	# 	Guitarist.solo()
+
+
+
+# type(Band.hire)
+# print(Band.hire)
+zak = Drummer()
 nigel = Drummer()
 nigel.solo(9)
-print(nigel.sounds)
-print(nigel.Counttofour())
-print(nigel.Combust())
+print(nigel.counttofour())
+print(nigel.combust())
+Coldplay = Band()
+print(Band())
+# nigel = Coldplay.hire()
+# zak = Coldplay.hire()
