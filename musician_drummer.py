@@ -47,28 +47,6 @@ class Drummer(Musician):
 		print(random.choice(self.sounds)*3)
 
 
-class Band(object):
-	"""docstring for Band"""
-	band_members = []
-
-	def hire(self, member):
-
-		self.band_members.append(member)
-		print([_member.name for _member in self.band_members])
-
-	def fire(self, member):
-		
-		self.band_members.remove(member)
-		print('{} has been fired from the {}'.format(member, self))
-		print([_member.name for _member in self.band_members])
-
-	def bandmusic(self):
-		
-		print (Drummer.counttofour(self))
-
-		for member in self.band_members:
-			member.solo(5)
-
 
 zak = Guitarist('Zak40')
 moses = Bassist('Moses')
@@ -76,9 +54,3 @@ nigel = Drummer('Nigel')
 nigel.solo(9)
 print(nigel.counttofour())
 print(nigel.combust())
-coldplay = Band()
-coldplay.hire(nigel)
-coldplay.hire(zak)
-coldplay.hire(moses)
-# coldplay.fire(nigel)
-coldplay.bandmusic()
