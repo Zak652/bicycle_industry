@@ -29,14 +29,6 @@ class Bike_Shop(object):
 	def __repr__(self):
 		return self.shopname
 
-	def add_inventory(self):
-
-		for model in modelslist:
-			self.inventory[model] = int(input("How many {}s would you like to the {} stock? "
-										   .format (model.modelname, self.shopname)))
-
-		return self.inventory
-
 	def price_list(self):
 
 		for bike_model in self.inventory:
@@ -77,7 +69,6 @@ class Customers(object):
 		self.myorders = []
 		self.purchases = []
 		self.totalspend = totalspend
-		self.shopchoice = random.choice(shopslist)
 
 	def __repr__(self):
 		return self.custname
@@ -96,9 +87,6 @@ class Customers(object):
 		# Select a bike to buy and update personal order list
 		if len(self.affordable_bikes) > 0:
 			self.myorders.append(random.choice(self.affordable_bikes))
-
-			#Send order to the shop / dealer
-			self.shopchoice.orderrequests[self] = random.choice(self.myorders)
 
 		else:
 			print("{} can't afford any bike".format(self.custname))
